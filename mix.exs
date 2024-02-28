@@ -44,7 +44,14 @@ defmodule SocialApp.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:plug_cowboy, "~> 2.5"},
-      {:cors_plug, "~> 3.0"}
+      {:cors_plug, "~> 3.0"},
+      {:ash, "~> 2.19"},
+      {:ash_postgres, "~> 1.5"},
+      {:ash_phoenix, "~> 1.3"},
+      {:ash_authentication, "~> 3.12"},
+      {:ash_authentication_phoenix, "~> 1.9"},
+      {:ash_json_api, "~> 0.34.2"},
+      {:open_api_spex, "~> 3.18"}
     ]
   end
 

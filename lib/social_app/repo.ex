@@ -1,5 +1,8 @@
 defmodule SocialApp.Repo do
-  use Ecto.Repo,
-    otp_app: :social_app,
-    adapter: Ecto.Adapters.Postgres
+  use AshPostgres.Repo, otp_app: :social_app
+
+  # Installs Postgres extensions that ash commonly uses
+  def installed_extensions do
+    ["uuid-ossp", "citext"]
+  end
 end

@@ -9,7 +9,8 @@ import Config
 
 config :social_app,
   ecto_repos: [SocialApp.Repo],
-  generators: [timestamp_type: :utc_datetime]
+  generators: [timestamp_type: :utc_datetime],
+  ash_apis: [SocialApp.Accounts]
 
 # Configures the endpoint
 config :social_app, SocialAppWeb.Endpoint,
@@ -42,3 +43,11 @@ config :phoenix, :json_library, Jason
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"
+
+config :mime, :types, %{
+  "application/vnd.api+json" => ["json"]
+}
+
+config :mime, :extensions, %{
+  "json" => "application/vnd.api+json"
+}

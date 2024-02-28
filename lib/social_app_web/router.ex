@@ -10,8 +10,16 @@ defmodule SocialAppWeb.Router do
     get "/*path", WebController, :index
   end
 
-  scope "/api", SocialAppWeb do
+  scope "/api" do
     pipe_through :api
+
+    forward "/swaggerui",
+            OpenApiSpex.Plug.SwaggerUI,
+            path: "/api/auth/open_api",
+            title: "Myapp's JSON-API - Swagger UI",
+            default_model_expand_depth: 4
+
+    forward "/auth", SocialAppWeb.Accounts.Router
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development

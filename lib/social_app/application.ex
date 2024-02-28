@@ -17,7 +17,8 @@ defmodule SocialApp.Application do
       # Start a worker by calling: SocialApp.Worker.start_link(arg)
       # {SocialApp.Worker, arg},
       # Start to serve requests, typically the last entry
-      SocialAppWeb.Endpoint
+      SocialAppWeb.Endpoint,
+      {AshAuthentication.Supervisor, otp_app: :social_app}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
