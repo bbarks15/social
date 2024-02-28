@@ -13,6 +13,12 @@ defmodule SocialAppWeb.Endpoint do
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
+  # CORS Config for local development
+  plug CORSPlug,
+    origin: ["http://localhost:5173"],
+    methods: ["GET", "POST"],
+    headers: ["*"]
+
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phx.digest
