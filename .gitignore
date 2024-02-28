@@ -26,3 +26,5 @@ erl_crash.dump
 social_app-*.tar
 
 priv/static/web
+db-data
+pgadmin-data

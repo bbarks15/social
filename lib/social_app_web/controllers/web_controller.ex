@@ -12,8 +12,7 @@ defmodule SocialAppWeb.WebController do
   # Potential improvement: Cache the file contents here
   # in an ETS table so we don't read from the disk for every request.
   defp render_react_app() do
-    Application.app_dir(:phoenix_react, "priv/static/webapp/index.html")
+    Application.app_dir(:social_app, "priv/static/web/index.html")
     |> File.read!()
   end
 end
-
